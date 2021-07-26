@@ -24,15 +24,8 @@
             // teksta => masyva
             // 4+5 [4, '+', 5]
             // 150 + 3 [1,5,0,"+",3]
-            // $duomenuMasyvas = str_split($aritmetika, 1) //teksta i masyva i vienodas dalis
-            // explode - teksta pavercia i masyva
-            // suskaido i masyva pagal delimiter(simboli)
+            $duomenuMasyvas = str_split($aritmetika, 1) //teksta i masyva i vienodas dalis
 
-            //Kaip pritaikyti skirtingam simboliui?
-            //Skaiciai su tarpais, kaip istaisyt?
-            $duomenuMasyvas = explode("", $aritmetika);
-
-            var_dump($duomenuMasyvas);
             
             // 
             // 4+5 => [4, '+', 5]

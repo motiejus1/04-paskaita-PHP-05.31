@@ -29,8 +29,7 @@
             // suskaido i masyva pagal delimiter(simboli)
 
             //Kaip pritaikyti skirtingam simboliui?
-            //Skaiciai su tarpais, kaip istaisyt?
-            $duomenuMasyvas = explode("", $aritmetika);
+            $duomenuMasyvas = explode("/", $aritmetika);
 
             var_dump($duomenuMasyvas);
             
