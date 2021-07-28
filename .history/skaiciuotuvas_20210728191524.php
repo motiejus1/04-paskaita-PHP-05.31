@@ -17,27 +17,19 @@
 
     //Funkcijos
 
-    function skaiciavimoFunkcija($simbolis, $aritmetika ) {
-        $duomenuMasyvas = explode($simbolis, $aritmetika);
-        $duomenuMasyvas[2] = $simbolis;
+    function skaiciavimoFunkcija() {
+        $duomenuMasyvas = explode("+", $aritmetika);
+        $duomenuMasyvas[2] = "+";
 
         //Kintamuju sukeitimas pasitelkian pagalbini kintamaji
         $pagalbinis = $duomenuMasyvas[2];// +
         $duomenuMasyvas[2] = $duomenuMasyvas[1];
         $duomenuMasyvas[1] = $pagalbinis;
-        if($simbolis == "+") {
-            return $duomenuMasyvas[0] + $duomenuMasyvas[2];
-        } else if($simbolis == "-") {
-            return $duomenuMasyvas[0] - $duomenuMasyvas[2];
-        } else if($simbolis == "/") {
-            return $duomenuMasyvas[0] / $duomenuMasyvas[2];
-        } else if($simbolis == "*") {
-            return $duomenuMasyvas[0] * $duomenuMasyvas[2];
-        } else if($simbolis == "%") {
-            return $duomenuMasyvas[0] % $duomenuMasyvas[2];
-        }
-        return "Veiksmo neimanoma atlikt";
+
+        return $duomenuMasyvas[0] +  $duomenuMasyvas[2];
     }
+
+    echo skaiciavimoFunkcija();
 
     if(isset($_GET["patvirtinti"])) {
         echo "Mygtukas paspaustas";
@@ -70,15 +62,24 @@
             // jeigu simbolis yra surastas - grazina simbolio pozicija
 
             if(strpos($aritmetika,"+") == 1) {
-                $rezultatas = skaiciavimoFunkcija("+", $aritmetika);
+                $duomenuMasyvas = explode("+", $aritmetika);
+                $duomenuMasyvas[2] = "+";
+
+                //Kintamuju sukeitimas pasitelkian pagalbini kintamaji
+                $pagalbinis = $duomenuMasyvas[2];// +
+                $duomenuMasyvas[2] = $duomenuMasyvas[1];
+                $duomenuMasyvas[1] = $pagalbinis;
+
+                $rezultatas = $duomenuMasyvas[0] +  $duomenuMasyvas[2];
+
             } else if(strpos($aritmetika,"-") == 1) {
-                $rezultatas = skaiciavimoFunkcija("-", $aritmetika);
+
             } else if(strpos($aritmetika,"/") == 1) {
-                $rezultatas = skaiciavimoFunkcija("/", $aritmetika);
+
             } else if(strpos($aritmetika,"*") == 1) {
-                $rezultatas = skaiciavimoFunkcija("*", $aritmetika);
+
             } else if(strpos($aritmetika,"%") == 1) {
-                $rezultatas = skaiciavimoFunkcija("%", $aritmetika);
+
             } else {
                 $rezultatas = "Veiksmo zenklas neteisingas";
             }
@@ -92,10 +93,7 @@
 
             var_dump($duomenuMasyvas);
             
-            echo "<div>";
-            echo $rezultatas;
-            echo "</div>";
-            
+            echo $aritmetika; 
         } else {
             echo "Laukelis tuscias";
         }

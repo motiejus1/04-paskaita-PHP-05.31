@@ -15,30 +15,6 @@
 
     <?php 
 
-    //Funkcijos
-
-    function skaiciavimoFunkcija($simbolis, $aritmetika ) {
-        $duomenuMasyvas = explode($simbolis, $aritmetika);
-        $duomenuMasyvas[2] = $simbolis;
-
-        //Kintamuju sukeitimas pasitelkian pagalbini kintamaji
-        $pagalbinis = $duomenuMasyvas[2];// +
-        $duomenuMasyvas[2] = $duomenuMasyvas[1];
-        $duomenuMasyvas[1] = $pagalbinis;
-        if($simbolis == "+") {
-            return $duomenuMasyvas[0] + $duomenuMasyvas[2];
-        } else if($simbolis == "-") {
-            return $duomenuMasyvas[0] - $duomenuMasyvas[2];
-        } else if($simbolis == "/") {
-            return $duomenuMasyvas[0] / $duomenuMasyvas[2];
-        } else if($simbolis == "*") {
-            return $duomenuMasyvas[0] * $duomenuMasyvas[2];
-        } else if($simbolis == "%") {
-            return $duomenuMasyvas[0] % $duomenuMasyvas[2];
-        }
-        return "Veiksmo neimanoma atlikt";
-    }
-
     if(isset($_GET["patvirtinti"])) {
         echo "Mygtukas paspaustas";
         
@@ -49,10 +25,8 @@
             //Galbut funkcija, kuri leistu ieskoti tam tikru simboliu ir juos panaikinti?
             //str_replace - ji randa mums norima simboli, ir ta surasta simboli pakeisti
 
-            $aritmetika = str_replace(" ","",$aritmetika);
+            $aritmetika = str_replace(" ","",$aritmetika); 
 
-            $rezultatas = 0;
-            $duomenuMasyvas = 0;
             // + 
             // teksta => masyva
             // 4+5 [4, '+', 5]
@@ -70,32 +44,47 @@
             // jeigu simbolis yra surastas - grazina simbolio pozicija
 
             if(strpos($aritmetika,"+") == 1) {
-                $rezultatas = skaiciavimoFunkcija("+", $aritmetika);
-            } else if(strpos($aritmetika,"-") == 1) {
-                $rezultatas = skaiciavimoFunkcija("-", $aritmetika);
-            } else if(strpos($aritmetika,"/") == 1) {
-                $rezultatas = skaiciavimoFunkcija("/", $aritmetika);
-            } else if(strpos($aritmetika,"*") == 1) {
-                $rezultatas = skaiciavimoFunkcija("*", $aritmetika);
-            } else if(strpos($aritmetika,"%") == 1) {
-                $rezultatas = skaiciavimoFunkcija("%", $aritmetika);
-            } else {
-                $rezultatas = "Veiksmo zenklas neteisingas";
-            }
 
-            echo $rezultatas; //error
+            } else if(strpos($aritmetika,"-") == 1) {
+
+            } else if(strpos($aritmetika,"/") == 1) {
+
+            } else if(strpos($aritmetika,"*") == 1) {
+
+            } else if(strpos($aritmetika,"%") == 1) {
+
+            } 
 
 
             //PHP echo komanda jeigu true/false kintamaji - 1 arba tuscia eilute
             //var_dump - mes galime isvedineti masyvus
             //var_dump - bet koki kintamaji, kad patikrintume kokio jisai yra tipo
+            var_dump($simbolioPozicija);
 
+
+            //Kaip pritaikyti skirtingam simboliui? +,-, /, * , %
+            //Skaiciai su tarpais, kaip istaisyt? 150 + 4
+            $duomenuMasyvas = explode("+", $aritmetika);
+            $duomenuMasyvas[2] = "+";
+
+            //Kintamuju sukeitimas pasitelkian pagalbini kintamaji
+            $pagalbinis = $duomenuMasyvas[2];// +
+            $duomenuMasyvas[2] = $duomenuMasyvas[1];
+            $duomenuMasyvas[1] = $pagalbinis;
+
+
+            $simbolioPozicija = strpos("+",$duomenuMasyvas[2]);
+            var_dump($simbolioPozicija);
             var_dump($duomenuMasyvas);
             
-            echo "<div>";
-            echo $rezultatas;
-            echo "</div>";
+            // 
+            // 4+5 => [4, '+', 5]
+            // 4-5 => [4, '-', 5]
+            // 4*5 => [4, '*', 5]
+            // 4/5 => [4, '/', 5]
+            // 4%5 => [4, '%', 5]
             
+            echo $aritmetika; 
         } else {
             echo "Laukelis tuscias";
         }

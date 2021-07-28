@@ -94,7 +94,7 @@
             
             echo "<div>";
             echo $rezultatas;
-            echo "</div>";
+            echo "</div>"
             
         } else {
             echo "Laukelis tuscias";

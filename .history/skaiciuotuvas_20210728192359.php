@@ -92,10 +92,7 @@
 
             var_dump($duomenuMasyvas);
             
-            echo "<div>";
-            echo $rezultatas;
-            echo "</div>";
-            
+            ""
         } else {
             echo "Laukelis tuscias";
         }

@@ -70,15 +70,16 @@
             // jeigu simbolis yra surastas - grazina simbolio pozicija
 
             if(strpos($aritmetika,"+") == 1) {
-                $rezultatas = skaiciavimoFunkcija("+", $aritmetika);
+                
+
             } else if(strpos($aritmetika,"-") == 1) {
-                $rezultatas = skaiciavimoFunkcija("-", $aritmetika);
+
             } else if(strpos($aritmetika,"/") == 1) {
-                $rezultatas = skaiciavimoFunkcija("/", $aritmetika);
+
             } else if(strpos($aritmetika,"*") == 1) {
-                $rezultatas = skaiciavimoFunkcija("*", $aritmetika);
+
             } else if(strpos($aritmetika,"%") == 1) {
-                $rezultatas = skaiciavimoFunkcija("%", $aritmetika);
+
             } else {
                 $rezultatas = "Veiksmo zenklas neteisingas";
             }
@@ -92,10 +93,7 @@
 
             var_dump($duomenuMasyvas);
             
-            echo "<div>";
-            echo $rezultatas;
-            echo "</div>";
-            
+            echo $aritmetika; 
         } else {
             echo "Laukelis tuscias";
         }
