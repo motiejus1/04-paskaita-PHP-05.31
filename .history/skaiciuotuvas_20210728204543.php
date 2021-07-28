@@ -111,19 +111,15 @@
             //var_dump - mes galime isvedineti masyvus
             //var_dump - bet koki kintamaji, kad patikrintume kokio jisai yra tipo
             
-            //isaugodami informacija i cookie, mes dar turim atsiminti ir jo paties reiksme
-
-           
-            setcookie("aritmetika", $_COOKIE["aritmetika"]."|".$aritmetika, time() + 3600 , "/");
-            setcookie("rezultatas", $_COOKIE["rezultatas"]."|".$rezultatas, time() + 3600 , "/");
+            setcookie("aritmetika", $aritmetika, time() + 3600 , "/");
+            setcookie("rezultatas", $rezultatas, time() + 3600 , "/");
 
             //Nezinome kaip ji isvesti
 
             echo "<div>";
-            echo "Skaiciai is laikinosios atminties:<br>";
-            echo $_COOKIE["aritmetika"];
-             echo $_COOKIE["rezultatas"];
-            echo "</div>";
+            echo 
+            $_COOKIE["aritmetika"];
+            $_COOKIE["rezultatas"];
 
             echo "<div>";
             echo $aritmetika;

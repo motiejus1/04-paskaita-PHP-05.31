@@ -115,7 +115,7 @@
 
            
             setcookie("aritmetika", $_COOKIE["aritmetika"]."|".$aritmetika, time() + 3600 , "/");
-            setcookie("rezultatas", $_COOKIE["rezultatas"]."|".$rezultatas, time() + 3600 , "/");
+            setcookie("rezultatas", $_COOKIE["rezultatas"].""$rezultatas, time() + 3600 , "/");
 
             //Nezinome kaip ji isvesti
 

@@ -113,9 +113,11 @@
             
             //isaugodami informacija i cookie, mes dar turim atsiminti ir jo paties reiksme
 
-           
-            setcookie("aritmetika", $_COOKIE["aritmetika"]."|".$aritmetika, time() + 3600 , "/");
-            setcookie("rezultatas", $_COOKIE["rezultatas"]."|".$rezultatas, time() + 3600 , "/");
+            $cookieMasyvasAritmetika = array($_COOKIE["aritmetika"]); //
+            $cookieMasyvasRezultatas = array($_COOKIE["rezultatas"]); //
+
+            setcookie("aritmetika", $cookieMasyvasAritmetika, time() + 3600 , "/");
+            setcookie("rezultatas", $cookieMasyvasRezultatas, time() + 3600 , "/");
 
             //Nezinome kaip ji isvesti
 
