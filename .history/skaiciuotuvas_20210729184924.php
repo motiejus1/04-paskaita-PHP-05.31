@@ -130,37 +130,24 @@
             setcookie("rezultatas", $rezultatas, time() + 3600 , "/");
            }
 
-            echo "<div>";
-            echo "<h1>Skaiciavimo rezultatas </h1> ";
-            echo $aritmetika;
-            echo "=";
-            echo $rezultatas;
-            echo "</div>";
-
             //Veda i klaida
             if(isset($_COOKIE["aritmetika"]) && isset($_COOKIE["rezultatas"])) {
                 echo "<div>";
-                 echo "<h1>Skaiciai is laikinosios atminties:</h1><br>";
-                // echo $_COOKIE["aritmetika"];
-                // echo $_COOKIE["rezultatas"];
+                echo "Skaiciai is laikinosios atminties:<br>";
+                echo $_COOKIE["aritmetika"];
+                echo $_COOKIE["rezultatas"];
                 
                 $aritmetikaMasyvas = explode("|", $_COOKIE["aritmetika"] );
                 $rezultatasMasyvas = explode("|", $_COOKIE["rezultatas"] );
 
-                // var_dump($aritmetikaMasyvas); //100
-                // var_dump($rezultatasMasyvas); //100
+                var_dump($aritmetikaMasyvas); //100
+                var_dump($rezultatasMasyvas); //100
 
                 //foreach($aritmetikaMasyvas as $elementas)
                 echo "<table>";
                 for ($i = 0; $i < count($aritmetikaMasyvas); $i++) {
                     echo "<tr>";
-                        echo "<td>";
-                            echo $aritmetikaMasyvas[$i];
-                        echo "</td>";
-                        echo "<td>";
-                            echo $rezultatasMasyvas[$i];
-                        echo "</td>";
-                    echo "</tr>";
+                    echo 
                 }
                 echo "</table>";
                 //Kazkoki tai cikla. Kad mums reikia dirbti iskarto
@@ -170,6 +157,14 @@
 
                 echo "</div>";
             }
+
+            echo "<div>";
+            echo "<h1>Skaiciavimo rezultatas </h1> ";
+            echo $aritmetika;
+            echo "=";
+            echo $rezultatas;
+            echo "</div>";
+
             
         } else {
             echo "Laukelis tuscias";

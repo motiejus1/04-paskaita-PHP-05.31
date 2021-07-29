@@ -140,7 +140,7 @@
             //Veda i klaida
             if(isset($_COOKIE["aritmetika"]) && isset($_COOKIE["rezultatas"])) {
                 echo "<div>";
-                 echo "<h1>Skaiciai is laikinosios atminties:</h1><br>";
+                 echo "Skaiciai is laikinosios atminties:<br>";
                 // echo $_COOKIE["aritmetika"];
                 // echo $_COOKIE["rezultatas"];
                 

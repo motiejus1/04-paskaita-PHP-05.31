@@ -116,7 +116,7 @@
            //Pirmo skaiciavimo metu jokio sausainiuko isaugoto nera
            //Yra tikrinama ar aritmetika ir rezultatas sausaniukai egzistuoja.
            //Jeigu jie neegzistuoja, juos sukuria
-           //Jei egzituoja aritmetika ir rezultatas. Pasiima sena reiksme.
+           //2 aritmetika ir rezultatas. Pasiima sena reiksme.
 
 
             //if(isset($_GET['veiksmas']))
@@ -130,46 +130,22 @@
             setcookie("rezultatas", $rezultatas, time() + 3600 , "/");
            }
 
-            echo "<div>";
-            echo "<h1>Skaiciavimo rezultatas </h1> ";
-            echo $aritmetika;
-            echo "=";
-            echo $rezultatas;
-            echo "</div>";
-
             //Veda i klaida
             if(isset($_COOKIE["aritmetika"]) && isset($_COOKIE["rezultatas"])) {
                 echo "<div>";
-                 echo "<h1>Skaiciai is laikinosios atminties:</h1><br>";
-                // echo $_COOKIE["aritmetika"];
-                // echo $_COOKIE["rezultatas"];
-                
-                $aritmetikaMasyvas = explode("|", $_COOKIE["aritmetika"] );
-                $rezultatasMasyvas = explode("|", $_COOKIE["rezultatas"] );
-
-                // var_dump($aritmetikaMasyvas); //100
-                // var_dump($rezultatasMasyvas); //100
-
-                //foreach($aritmetikaMasyvas as $elementas)
-                echo "<table>";
-                for ($i = 0; $i < count($aritmetikaMasyvas); $i++) {
-                    echo "<tr>";
-                        echo "<td>";
-                            echo $aritmetikaMasyvas[$i];
-                        echo "</td>";
-                        echo "<td>";
-                            echo $rezultatasMasyvas[$i];
-                        echo "</td>";
-                    echo "</tr>";
-                }
-                echo "</table>";
-                //Kazkoki tai cikla. Kad mums reikia dirbti iskarto
-                //su 2 masyvais, taciau jie yra visalaika vienodo ilgio
-                //Na mums uztenka vieno ciklo
-
-
+                echo "Skaiciai is laikinosios atminties:<br>";
+                echo $_COOKIE["aritmetika"];
+                echo $_COOKIE["rezultatas"];
                 echo "</div>";
             }
+
+            echo "<div>";
+            echo $aritmetika;
+            echo "</div>";
+
+            echo "<div>";
+            echo $rezultatas;
+            echo "</div>";
             
         } else {
             echo "Laukelis tuscias";

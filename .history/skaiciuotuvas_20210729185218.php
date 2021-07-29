@@ -129,18 +129,16 @@
             setcookie("aritmetika", $aritmetika, time() + 3600 , "/");
             setcookie("rezultatas", $rezultatas, time() + 3600 , "/");
            }
-
-            echo "<div>";
-            echo "<h1>Skaiciavimo rezultatas </h1> ";
-            echo $aritmetika;
-            echo "=";
-            echo $rezultatas;
-            echo "</div>";
-
+           echo "<div>";
+           echo "<h1>Skaiciavimo rezultatas </h1> ";
+           echo $aritmetika;
+           echo "=";
+           echo $rezultatas;
+           echo "</div>";
             //Veda i klaida
             if(isset($_COOKIE["aritmetika"]) && isset($_COOKIE["rezultatas"])) {
                 echo "<div>";
-                 echo "<h1>Skaiciai is laikinosios atminties:</h1><br>";
+                // echo "Skaiciai is laikinosios atminties:<br>";
                 // echo $_COOKIE["aritmetika"];
                 // echo $_COOKIE["rezultatas"];
                 
